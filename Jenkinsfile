@@ -1,18 +1,18 @@
-node {
-    
-    stage('clone') {
-        git 'https://github.com/imadbenaziza/jenkins-helloworld.git'
-    
-    }
-    
-    stage('build') {
-        sh 'javac Main.java'
-    
-    }
-    
-    stage('run') {
-        sh 'java Main'
-    
-    }
+pipeline {
+    agent any
 
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "This is the build stage"'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "This is the test stage"'
+            }
+        }
+    }
 }
+
